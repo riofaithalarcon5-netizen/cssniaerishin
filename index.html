@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riofaith Malicdem – Personal Web</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 62.5%;
+    }
+
+    body {
+      background-image: url(bgy2k1.jpg);
+      color: #fff;
+      padding-top: 80px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 9%;
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 2px solid #b74b4b;
+    }
+
+    .logo {
+      font-size: 3rem;
+      color: #b74b4b;
+      font-weight: 800;
+      transition: 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+    }
+
+    nav a {
+      font-size: 1.6rem;
+      color: #fff;
+      margin-left: 100px;
+      transition: 0.3s ease;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #b74b4b;
+      border-bottom: 2px solid #b74b4b;
+    }
+
+    .home {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      padding: 5rem 9%;
+    }
+
+    .home-img img {
+      width: 280px;
+      border-radius: 50%;
+      border: 4px solid #b74b4b;
+      box-shadow: 0 0 25px rgba(255, 116, 116, 0.5);
+    }
+
+    .home-content {
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .home-content h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .home-content h3 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .typing-container {
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .typing-text {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #b74b4b;
+      color: #b74b4b;
+      font-size: 2.5rem;       
+      font-weight: 800;    
+      animation: typing 8s steps(50, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #b74b4b; }
+    }
+
+    .home-content p {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      text-align: justify;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      background-color: transparent;
+      border: 2px solid #b74b4b;
+      border-radius: 4rem;
+      font-size: 1.6rem;
+      color: #b74b4b;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #b74b4b;
+      color: #000;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      padding: 20px;
+      background-color: #111;
+      border-radius: 10px;
+      border: 1px solid #b74b4b;
+    }
+
+    section h2 {
+      font-size: 2.4rem;
+      color: #b74b4b;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    section p {
+      font-size: 1.6rem;
+      text-align: justify;
+      text-indent: 2em;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .project-item {
+      background-color: #000;
+      border: 1px solid #b74b4b;
+      border-radius: 10px;
+      width: 280px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .project-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-item h3 {
+      color: #b74b4b;
+      margin: 10px;
+    }
+
+    .project-item p {
+      margin: 0 10px 10px;
+      font-size: 1.4rem;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .skill-item {
+      background-color: #000;
+      border-left: 4px solid #b74b4b;
+      padding: 15px;
+      width: 250px;
+      border-radius: 5px;
+    }
+
+    .skill-item h3 {
+      color: #b74b4b;
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .skill-item p {
+      font-size: 1.4rem;
+    }
+
+    .cta-section {
+      text-align: center;
+    }
+
+    .cta-section p {
+      margin-bottom: 20px;
+    }
+
+    .cta-section .btn {
+      margin: 10px;
+    }
+
+    footer {
+      border-top: 1px solid #b74b4b;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
+    #btnTop {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 4rem;
+      height: 4rem;
+      background-color: #b74b4b;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 2rem;
+      line-height: 4rem;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #btnTop:hover {
+      background-color: #fff;
+      color: #b74b4b;
+    }
+
+    @media (max-width: 600px) {
+      .home {
+        flex-direction: column;
+      }
+
+      .projects-container,
+      .skills-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Riofaith</a>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contacts</a>
+    </nav>
+  </header>
+
+  <section class="home" id="home">
+    <div class="home-img">
+      <img src="hero.jpg" alt="Riofaith Avatar" />
+    </div>
+    <div class="home-content">
+      <h1>Hi, I'm <span>Riofaith Malicdem</span></h1>
+      <h3>I'm an</h3>
+      <div class="typing-container">
+        <span class="typing-text">Artist, Dancer, Performer & Graphic Designer.</span>
+      </div>
+      <p>“There is no competition because nobody can be me" — A passionate Artist who loves Fashion, Crafting, Dancing, and Traditional arts.</p>
+      <a href="#contact" class="btn">Connect with me</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m 19 years old and currently living near MCU South Caloocan, where I’m part of the pioneering batch of BS Entertainment and Multimedia Computing, majoring in Digital Animation.
+
+Art has always been my way of expressing who I am. I’m a dancer, painter, and performer, and I also have a deep love for fashion and design. Whether it’s moving to the rhythm of music, bringing colors to life on a canvas, or creating something new through digital art — creativity is what drives me every day.
+
+You could say I’m an artist, but I like to think of myself as the “it girl” — confident, passionate, and unafraid to stand out. Welcome to my world of art, style, and self-expression! </p>
+  </section>
+
+  <section id="projects">
+    <h2>Achievements</h2>
+    <div class="projects-container">
+      <div class="project-item">
+        <img src="p1.jpg" alt="Cheer Performance" />
+        <h3>Cheer Performance</h3>
+        <p>Performed at the UCAL as a member of the MCU Supremos.</p>
+      </div>
+      <div class="project-item">
+        <img src="art1.jpg" alt="Mural Design Project" />
+        <h3>Mural Design</h3>
+        <p>Repaired & created murals for my past school.</p>
+      </div>
+      <div class="project-item">
+        <img src="art3.jpg" alt="Art Exhibition" />
+        <h3>Art Exhibition</h3>
+        <p>Featured artist in a local art exhibition showcasing my paintings.</p>
+      </div>
+      <div class="project-item">
+        <img src="dance2.jpg" alt="Dance Performance" />
+        <h3>Dance Performance</h3>
+        <p>Performed a history curricular dance with a well-known dance group.</p>
+      </div>
+      <div class="project-item">
+        <img src="dance1.jpg" alt="Choreography Project" />
+        <h3>Choreography</h3>
+        <p>Created and directed a choreography piece for a school performance.</p>
+      </div>
+      <div class="project-item">
+        <img src="mu1.jpg" alt="Makeup Artistry" />
+        <h3>Makeup Artistry</h3>
+        <p>Worked as a freelance makeup artist for various clients and creative projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-item">
+        <h3>Dancing</h3>
+        <p>Experienced in various dance styles, including cheerleading and performance routines.</p>
+      </div>
+      <div class="skill-item">
+        <h3>Painting</h3>
+        <p>Skilled in traditional painting techniques, bringing colors and ideas to life on canvas.</p>
+      </div>
+      <div class="skill-item">
+        <h3>Performing</h3>
+        <p>Confident performer with experience in live shows and artistic expressions.</p>
+      </div>
+      <div class="skill-item">
+        <h3>Fashion Design</h3>
+        <p>Passionate about fashion, crafting styles and designs that reflect personal expression.</p>
+      </div>
+      <div class="skill-item">
+        <h3>Digital Art</h3>
+        <p>Proficient in digital animation and multimedia computing for creative projects.</p>
+      </div>
+      <div class="skill-item">
+        <h3>Creativity & Design</h3>
+        <p>Strong in overall creativity, including crafting, editing, and innovative design solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contacts</h2>
+    <div class="cta-section">
+      <p>Let's connect! Reach out via social media, phone, or email.</p>
+      <a href="https://www.facebook.com/ayeemmAriMendes" class="btn" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://www.instagram.com/scenaeriiiii/" class="btn" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="tel:+639927386208" class="btn">Call Me</a>
+      <a href="mailto:riofaithalarcon05@gmail.com" class="btn">Email Me</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Riofaith Malicdem. All rights reserved.</p>
+  </footer>
+
+  <div id="btnTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+</body>
+</html>
